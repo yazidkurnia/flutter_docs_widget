@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../flutter_docs_widget/assets/style.css">
+    
+    <title>Dokumentasi Flutter Widget</title>
+    <style>
+      :root {
+        --primary: #0468D7;
+        --secondary: #1EBBEF;
+        --dark: #222831;
+        --light: #F8F9FB;
+        --accent: #44D7B6;
+        --light-blue: #E8F4FF;
+        --code-bg: #F1F7FF;
+        --transition: all 0.3s ease;
+        --sidebar-width: 260px;
+      }
+      
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar with toggle button -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <button class="mr-3" id="toggleSidebar" aria-label="Toggle Sidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.51 15.3L12 7.81L19.49 15.3" stroke="#0468D7" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.51 8.7L12 1.21L19.49 8.7" stroke="#1EBBEF" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.51 22.79L12 15.3L19.49 22.79" stroke="#44D7B6" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Flutter Docs
+        </a>
+        <div class="d-lg-none ml-auto">
+          <button class="btn btn-sm btn-outline-primary" id="navToggle" aria-label="Toggle Navigation">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="d-flex justify-content-between align-items-center d-md-none mb-3">
+        <h6 class="mb-0">Menu</h6>
+        <button class="btn btn-sm btn-light" id="closeSidebar" aria-label="Close Sidebar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <h6>Getting Started</h6>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#introduction"><i class="fas fa-info mr-2"></i>Introduction</a></li>
+      </ul>
+      <h6>Invisible Widget</h6>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#container"><i class="fas fa-box mr-2"></i>Container</a></li>
+        <li class="nav-item"><a class="nav-link" href="#row"><i class="fas fa-arrow-right mr-2"></i>Row</a></li>
+        <li class="nav-item"><a class="nav-link" href="#column"><i class="fas fa-arrow-down mr-2"></i>Column</a></li>
+      </ul>
+      <h6>Visible Widget</h6>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#text"><i class="fas fa-font mr-2"></i>Text</a></li>
+        <li class="nav-item"><a class="nav-link" href="#button"><i class="fas fa-solid fa-stop"></i>Button</a></li>
+      </ul>
+      <h6>Utilities</h6>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#colors_utilities"><i class="fas fa-solid fa-droplet"></i>Color</a></li>
+        <li class="nav-item"><a class="nav-link" href="#font"><i class="fas fa-button mr-2"></i>Font</a></li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="container-wrapper" id="containerWrapper">
+      <div class="content" id="mainContent">
+        <div class="page-header px-4">
+          <h1>Dokumentasi Flutter Widget</h1>
+          <p>Kumpulan widget Flutter umum beserta kode dan contoh tampilannya. Panduan interaktif untuk membangun UI Flutter yang menakjubkan.</p>
+        </div>
+    
+        <!-- Container Widget -->
+        <div class="widget-card" id="container">
+          <div class="widget-header">
+            <div class="widget-icon">
+              <i class="fas fa-box"></i>
+            </div>
+            <h2 class="widget-title">Container</h2>
+          </div>
+          <div class="widget-body">
+            <p>Widget fleksibel yang bisa digunakan untuk membungkus dan memberi styling pada child widget.</p>
+    
+            <pre>
+    <span class="code-label">Dart</span>
+    <code>Container(
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Text(
+        'Di dalam container',
+        style: TextStyle(color: Colors.white),
+      ),
+    )</code></pre>
+    
+            <div class="img-container">
+              <img src="https://flutter.github.io/assets-for-api-docs/assets/widgets/container.png" alt="Container Example" class="img-fluid">
+            </div>
+    
+            <div class="mt-4">
+              <h5>Properti Umum:</h5>
+              <ul>
+                <li><strong>padding</strong> - Ruang di dalam container</li>
+                <li><strong>margin</strong> - Ruang di luar container</li>
+                <li><strong>decoration</strong> - Styling visual (warna, border, shadow)</li>
+                <li><strong>alignment</strong> - Posisi child di dalam container</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Row Widget -->
+        <div class="widget-card" id="row">
+          <div class="widget-header">
+            <div class="widget-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+            <h2 class="widget-title">Row</h2>
+          </div>
+          <div class="widget-body">
+            <p>Widget untuk menyusun elemen secara horizontal dalam satu baris.</p>
+    
+            <pre>
+    <span class="code-label">Dart</span>
+    <code>Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Icon(Icons.star, color: Colors.amber),
+        Text('Rating Item', style: TextStyle(fontWeight: FontWeight.bold)),
+        Text('4.9')
+      ],
+    )</code></pre>
+    
+            <div class="img-container">
+              <img src="https://flutter.github.io/assets-for-api-docs/assets/widgets/row.png" alt="Row Example" class="img-fluid">
+            </div>
+    
+            <div class="mt-4">
+              <h5>Properti Umum:</h5>
+              <ul>
+                <li><strong>mainAxisAlignment</strong> - Perataan pada sumbu utama (horizontal)</li>
+                <li><strong>crossAxisAlignment</strong> - Perataan pada sumbu silang (vertikal)</li>
+                <li><strong>children</strong> - Daftar widget yang akan ditampilkan dalam baris</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Column Widget -->
+        <div class="widget-card" id="column">
+          <div class="widget-header">
+            <div class="widget-icon">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+            <h2 class="widget-title">Column</h2>
+          </div>
+          <div class="widget-body">
+            <p>Widget untuk menyusun elemen secara vertikal dalam satu kolom.</p>
+            <pre>
+                    <span class="code-label">Dart</span>
+                    <code>
+      Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+              Text('Item 1', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              SizedBox(height: 8),
+              Text('Item 2', style: TextStyle(fontSize: 16)),
+              SizedBox(height: 8),
+              Text('Item 3', style: TextStyle(fontSize: 14, color: Colors.grey)),
+          ],
+      )
+                    </code>
+                </pre>
+    
+            <div class="img-container">
+              <img src="https://flutter.github.io/assets-for-api-docs/assets/widgets/column.png" alt="Column Example" class="img-fluid">
+            </div>
+    
+            <div class="mt-4">
+              <h5>Properti Umum:</h5>
+              <ul>
+                <li><strong>mainAxisAlignment</strong> - Perataan pada sumbu utama (vertikal)</li>
+                <li><strong>crossAxisAlignment</strong> - Perataan pada sumbu silang (horizontal)</li>
+                <li><strong>children</strong> - Daftar widget yang akan ditampilkan dalam kolom</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Text Widget -->
+        <div class="widget-card" id="text">
+          <div class="widget-header">
+            <div class="widget-icon">
+              <i class="fas fa-font"></i>
+            </div>
+            <h2 class="widget-title">Text</h2>
+          </div>
+          <div class="widget-body">
+            <p>Digunakan untuk menampilkan teks sederhana dengan berbagai opsi formatting.</p>
+    
+            <pre>
+    <span class="code-label">Dart</span>
+    <code>Text(
+      'Hello, Flutter!',
+      style: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.blue,
+      ),
+    )</code></pre>
+    
+            <div class="img-container">
+              <img src="https://flutter.github.io/assets-for-api-docs/assets/widgets/text.png" alt="Text Example" class="img-fluid">
+            </div>
+    
+            <div class="mt-4">
+              <h5>Properti Umum:</h5>
+              <ul>
+                <li><strong>style</strong> - Untuk mengatur gaya teks (warna, ukuran, dll)</li>
+                <li><strong>textAlign</strong> - Mengatur alignment teks</li>
+                <li><strong>overflow</strong> - Menangani teks yang terlalu panjang</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    
+        <!-- button -->
+        <div class="widget-card" id="button">
+          <div class="widget-header">
+            <div class="widget-icon">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+            <h2 class="widget-title">Button</h2>
+          </div>
+          <div class="widget-body">
+            <p>Flutter memiliki widget button, yang dapat digunakan untuk membuat tombol, ada beberapa variasi button yang dapat digunakan seperti :</p>
+            <h6>Elevated Button</h6>
+            <pre>
+                  <span class="code-label">Dart</span>
+                  <code>
+      1. Basic
+      ElevatedButton(onPressed: () {
+        // Handle button press
+      }, child: Text('Button')),
+    
+      2. With custom style
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        onPressed: () {},
+        child: Text('Button'),
+      ),
+                  </code>
+              </pre>
+            <div class="img-container">
+              <div class="col-lg-1 mb-3">
+                <img src="./assets/images/buttons/basic_button.png" width="120" alt="Column Example" class="img-fluid">
+                <!-- <img src="./assets/images/buttons/rounded_elevated.png" alt="Column Example" class="img-fluid"> -->
+              </div>
+              <div class="col-lg-1">
+                <!-- <img src="https://flutter.github.io/assets-for-api-docs/assets/widgets/column.png" alt="Column Example" class="img-fluid"> -->
+                <img src="./assets/images/buttons/rounded_elevated.png" width="120" alt="Column Example" class="img-fluid">
+              </div>
+            </div>
+            <h6 class="mt-3">Outlined Button</h6>
+            <pre>
+                  <span class="code-label">Dart</span>
+                  <code>
+      1. Basic
+      ElevatedButton(onPressed: () {
+        // Handle button press
+      }, child: Text('Button')),
+    
+      2. With custom style
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        onPressed: () {},
+        child: Text('Button'),
+      ),
+                  </code>
+              </pre>
+          </div>
+        </div>
+    
+        <!-- Utilities -->
+        <div class="widget-card" id="colors_utilities">
+          <div class="widget-header">
+            <div class="widget-icon">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+            <h2 class="widget-title">Color</h2>
+          </div>
+          <div class="widget-body">
+            <p>Coloring pada flutter</p>
+            <pre>
+                  <span class="code-label">Dart</span>
+                  <code>
+      1. Dengan Hex code
+        Color(0xff......)
+    
+      2. Dengan flutter color
+        Color(Colors.red)
+                  </code>
+              </pre>
+            <div class="img-container">
+              <div class="col-lg-1 mb-3">
+                <div class="container w-100 h-100 bg-danger rounded">
+                  red
+                </div>
+              </div>
+              <div class="col-lg-1">
+                <div class="container w-100 h-100 bg-danger rounded">
+                  red
+                </div>
+              </div>
+            </div>
+    
+    
+            <div class="mt-4">
+              <h5>Kedua cara akan memberikan result yang sama hanya saja cakupan warna pada hexcode lebih luas dan variatif</h5>
+              <ul>
+                <li><strong>mainAxisAlignment</strong> - Perataan pada sumbu utama (vertikal)</li>
+                <li><strong>crossAxisAlignment</strong> - Perataan pada sumbu silang (horizontal)</li>
+                <li><strong>children</strong> - Daftar widget yang akan ditampilkan dalam kolom</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+    <footer class="text-center py-4 text-muted">
+      <p>Flutter Widget Documentation &copy; 2025</p>
+    </footer>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../flutter_docs_widget/js/index.js"></script>
+    <script>
+
+    </script>
+  </body>
+</html>
